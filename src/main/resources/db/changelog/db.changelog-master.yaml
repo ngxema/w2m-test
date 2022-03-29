@@ -1,0 +1,47 @@
+databaseChangeLog:
+
+  -  changeSet:
+       id:  1
+       author:  admin
+       changes:
+         -  createTable:
+              tableName:  superheroes
+              columns:
+                -  column:
+                     name:  id
+                     type:  int
+                     autoIncrement:  true
+                     constraints:
+                       primaryKey:  true
+                       nullable:  false
+                -  column:
+                     name:  name
+                     type:  varchar(50)
+                     constraints:
+                       nullable: false
+                -  column:
+                     name:  color
+                     type:  varchar(15)
+
+  - changeSet:
+      id: 2
+      author: admin
+      changes:
+        - insert:
+            tableName: superheroes
+            columns:
+              - column:
+                  name: name
+                  value: "Superman"
+              - column:
+                  name: color
+                  value: "Red"
+        - insert:
+            tableName: superheroes
+            columns:
+              - column:
+                  name: name
+                  value: "Spiderman"
+              - column:
+                  name: color
+                  value: "Red"
